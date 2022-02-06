@@ -3,14 +3,14 @@ INSERT INTO role(id, name, code) VALUES(2, 'ROLE_ADMINISTRATOR', 'admin');
 INSERT INTO role(id, name, code) VALUES(3, 'ROLE_TEACHER', 'teach');
 
 
-INSERT INTO USERS(id, first_name, last_name, username, password)--password: student2
-VALUES(1, 'Svetozar', 'Brboric', 'brboric99', '$2y$12$.deK12/GGYtlWVM6ymDEkO0rhXBIkyKTdwog3174yx6R/6FD4Y7V2');
-INSERT INTO USERS(id, first_name, last_name, username, password)--password: student1
-VALUES(4, 'Dejan', 'Rakin', 'rakin99', '$2a$10$ICJS6CRYqX636bjUsKPQEenmASoFSycNdTKe78GEN9u2FINXSkHya');
-INSERT INTO USERS(id, first_name, last_name, username, password)--password: admin
-VALUES(2, 'Milos', 'Milosevic', 'milosevoic123', '$2y$12$/0/Hb9rthBfdtIFQ9xo5..7PIM59xYH6F4/WI5tFg1etygn5kajDa');
-INSERT INTO USERS(id, first_name, last_name, username, password)--password: teacher1
-VALUES(3, 'Goran', 'Savic', 'savic123', '$2y$12$gdPJQKybWvH6wbDOexRJjOX7MS8rJjNxDJf7uUTNJuW/46OM6D24y');
+INSERT INTO USERS(id, first_name, last_name, username, password)--password: ziga99
+VALUES(1, 'Dario', 'Ziga', 'ziga99', '$2a$12$aEvdU3Zn9HHwGSuwmmPsI.Wx/g8oXbYJMmF54GcKPFfR.pVZIHzLC');
+INSERT INTO USERS(id, first_name, last_name, username, password)--password: maric99
+VALUES(4, 'Mihailo', 'Maric', 'maric99', '$2a$12$XlgmvSXFkvNAF4dzxZ/gvebt9QnMavqw54w8Bf2SkH5rOxeABtG2K');
+INSERT INTO USERS(id, first_name, last_name, username, password)--password: ivan99
+VALUES(2, 'Ivan', 'Stankovic', 'ivan99', '$2a$12$21qZE5wGxTy2XYZVts0Ahe9mwi8sYNwF4z2nRkObIlo9bvz25SEiq');
+INSERT INTO USERS(id, first_name, last_name, username, password)--password: kruna99
+VALUES(3, 'Milan', 'Krunic', 'kruna99', '$2a$12$zdUwdyVKM0ngD/a4UbFs.OkPTmrh70Jjn24obI3in88YChRH.7oRu');
 
 INSERT INTO user_role(user_id, role_id) VALUES(1, 1);
 INSERT INTO user_role(user_id, role_id) VALUES(4, 1);
