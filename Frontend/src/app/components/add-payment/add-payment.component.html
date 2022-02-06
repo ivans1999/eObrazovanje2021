@@ -1,0 +1,47 @@
+<div class=" col-md-8 color_text">
+    <div class=" table_color">
+        <h1 class="ml-5 title">Payment</h1>
+        <form class="ml-5">
+            <div class="row ml-2">
+                <div class="col-md-3 px-md-1">
+                    <div class="form-group">
+                        <b>Date:</b>
+                        <input type="date" *ngIf="mode==='ADD'" class="form-control" [(ngModel)]="payment.date" [ngModelOptions]="{standalone: true}">
+                        <input type="date" *ngIf="mode==='EDIT'" class="form-control" [(ngModel)]="date" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-md-3 px-md-1">
+                    <div class="form-group">
+                        <b>Amount:</b>
+                        <input type="text" class="form-control" [(ngModel)]="payment.amount" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-md-3 px-md-1">
+                    <div class="form-group">
+                        <b class="align-top">Currency:</b>
+                        <input type="text" class="form-control" [(ngModel)]="payment.currency" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row ml-2">
+                <div class="col-md-3 px-md-1">
+                    <div class="form-group">
+                        <b class="align-top">Note:</b>
+                        <textarea class="form-control" style="background-color: rgb(35,37,61); border-radius: 10px;" cols="30" rows="" [(ngModel)]="payment.note" [ngModelOptions]="{standalone: true}"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-3 px-md-1">
+                    <div class="form-group">
+                        <b class="align-top mr-5">Urgently:</b>
+                        <input type="checkbox" class="form-check-input" style="background-color: rgb(35,37,61);" [(ngModel)]="payment.urgently" [ngModelOptions]="{standalone: true}"> 
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="text-right mt-2">
+            <button *ngIf="mode==='ADD'" type="button" class="btn btn-fill btn-danger" (click)="addPayment()">Pay</button>
+            <button *ngIf="mode==='EDIT'" type="button" class="btn btn-fill btn-danger" (click)="editPayment()">✓</button>
+            <button type="button" class="btn btn-fill btn-danger ml-1" (click)="goBack()">X</button>
+        </div>
+    </div>
+</div>

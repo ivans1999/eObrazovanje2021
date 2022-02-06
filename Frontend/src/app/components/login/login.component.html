@@ -1,0 +1,54 @@
+<!-- class="bg-primary" -->
+<!-- 
+    <div class="form-group text-center">
+        <h1>Welcome!</h1>
+        <div>
+            <h4>Username</h4>
+            <input type="text" class="form-control col-2 d-inline" [(ngModel)]="loginData.username">
+        </div>
+        <div>
+            <h4>Password</h4>
+            <input type="password" class="form-control col-2 d-inline" [(ngModel)]="loginData.password">
+        </div>
+        <button type="button" class="btn btn-outline-primary mt-5 ml-10" (click)="login()">Log in</button>
+    </div> -->
+    <!-- ----------------- -->
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5" style="border: 5px;">
+                                <div class="card-header"><h1 class="text-center font-weight-light my-4">Login</h1></div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-floating mb-3">
+                                            <!-- <input class="form-control" id="inputEmail" type="text"  [(ngModel)]="loginData.username"/>
+                                            <label for="inputEmail">Username</label> -->
+                                            <h2 class="mb-0">Username</h2>
+                                            <input type="text" class="form-control" style="font-size: large;" [(ngModel)]="loginData.username" [ngModelOptions]="{standalone: true}">
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <!-- <input class="form-control" id="inputPassword" type="password" [(ngModel)]="loginData.password"/>
+                                            <label for="inputPassword">Password</label> -->
+                                            <h2 class="mb-0">Password</h2>
+                                            <input type="password" class="form-control" style="font-size: large;" [(ngModel)]="loginData.password" [ngModelOptions]="{standalone: true}">
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-outline-secondary mt-5 ml-10" (click)="loginn()">Log in</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+    </div>
+    
+    <!-- <script src="js/scripts.js"></script> -->
+

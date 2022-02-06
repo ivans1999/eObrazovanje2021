@@ -1,0 +1,62 @@
+<!-- <div class="content">
+    <div class="table_color">
+        <div class="form-control-file ">
+            <h1 class="pt-3 pl-3">Document</h1>
+            <div class="mt-5">
+                <b>Title:</b>
+                <input type="text" readonly [(ngModel)]="document.title" class="form-control col-3 d-inline ml-2">
+            </div>
+            <div class="mt-2 ml-50">
+                <b>Type:</b>
+                <input type="text" [(ngModel)]="document.typeDocumentDTO.code" class="form-control col-2 d-inline ml-2">
+                <select class="form-control col-2 d-inline ml-2" [(ngModel)]="document.typeDocumentDTO.code">
+                    <option *ngFor="let t of documentTypes;" value="{{t.code}}">{{t.name}}</option>
+                </select>
+            </div>
+            <div class="mt-2 ml-50">
+                <input type="file" class="btn ml-5 w-15" style="color: transparent"
+                    (change)="onFileSelected($event)">
+            </div>
+            <div class="ml-5">
+                <button type="button" class="btn btn-outline-primary mt-3 ml-5" (click)="submitDocument()">SAVE</button>
+                <button type="button" class="btn btn-outline-primary mt-3 ml-1" (click)="goBack()">CANCEL</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class=" col-md-8 color_text">
+    <div class="table_color">
+        <h1 class="ml-5 title">Document</h1>
+        <form class="ml-5">
+            <div class="row ml-2">
+                <div class="col-md-3 px-md-1">
+                    <div class="form-group">
+                        <b>Title:</b>
+                        <input type="text" readonly [(ngModel)]="document.title" class="form-control" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-md-3 px-md-1">
+                    <div class="form-group">
+                        <b>Type:</b>
+                        <select class="form-control" [(ngModel)]="document.typeDocumentDTO.code" [ngModelOptions]="{standalone: true}">
+                            <option class="black_text_color" *ngFor="let t of documentTypes;" value="{{t.code}}">{{t.name}}</option>
+                        </select>
+                        </div>
+                </div>
+                
+            </div>
+            <div class="row ml-2">
+                <div class="col-md-2 px-md-1">
+                    <div class="">
+                        <input type="file" class="form-control-file btn btn-sm" style="color: transparent"
+                            (change)="onFileSelected($event)">
+                    </div>
+                </div>
+            </div>
+        </form>     
+        <div class="text-right mt-2">
+            <button type="button" class="btn btn-fill btn-danger" (click)="submitDocument()">✓</button>
+            <button type="button" class="btn btn-fill btn-danger ml-1" (click)="goBack()">X</button>
+        </div>
+    </div>
+</div>

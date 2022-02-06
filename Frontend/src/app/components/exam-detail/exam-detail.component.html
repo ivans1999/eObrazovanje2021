@@ -1,0 +1,101 @@
+<div class="table_color">
+    <div class="main color_text">
+        <div class="row">
+            <div  class=" col-sm-6 text-left">
+                <h1 *ngIf="role === 'ROLE_STUDENT'" class="ml-5 title">Exam detail</h1>
+                <h1 *ngIf="role === 'ROLE_ADMINISTRATOR' || role==='ROLE_TEACHER'" class="ml-5 title">Exam parts</h1>
+            </div>
+            <div class=" col-sm-6">
+                <div class=" btn-group btn-group-toggle float-right"
+                    data-toggle="buttons">
+                    <label class=" btn btn-sm btn-danger btn-simple" >
+                        <input checked="checked" name="options" type="radio" />
+            
+                        <a class=" d-none d-sm-block d-md-block d-lg-block d-xl-block font-weight-bold" (click)="goBack()">
+                            Go back
+                        </a>
+                        <span class=" d-block d-sm-none">
+                          <i class=" tim-icons icon-single-02"> </i>
+                        </span>
+                      </label>
+                </div>
+            </div>
+        </div>
+       
+        <div *ngIf="role === 'ROLE_STUDENT'" class="row mx-auto w-75 mt-5">
+            <div class="ml-5 col">
+                <b>Course title:</b> <input type="text" readonly class="form-control ml-2" [(ngModel)]="exam.enrollmentDTO.courseInstanceDTO.courseSpecificationDTO.title">
+            </div>
+            <div class="w-10 ml-5 col">
+                <b>Gradle:</b> <input type="text" readonly class="form-control ml-2 col-8 text-center" [(ngModel)]="exam.gradle">
+            </div>
+            <div class="w-10 ml-5 col">
+                <b>Points:</b> <input type="text" readonly class="form-control ml-2 col-8 text-center" [(ngModel)]="exam.points">
+            </div>
+            <div class="w-10 ml-5 col">
+                <b>ECTS:</b> <input type="text" readonly class="form-control ml-2 col-6 text-center" [(ngModel)]="exam.enrollmentDTO.courseInstanceDTO.courseSpecificationDTO.ects">
+            </div>
+        </div>
+        <table class="table mx-auto w-75 color_text">
+            <thead class="color_text">
+                <tr>
+                    <th class="text-center" *ngIf="teacherExamPart">Course</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">Location</th>
+                    <th class="text-center">Points</th>
+                    <th *ngIf="role === 'ROLE_STUDENT'" class="text-center">Won points</th>
+                    <th *ngIf="role === 'ROLE_STUDENT'" class="text-center">Status</th>
+                    <th class="text-center">Type</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="color_text">
+                <tr *ngFor="let e of examDetails; let i = index; let odd = odd;">
+                    <td class="text-center" *ngIf="teacherExamPart">
+                        <button class="btn btn-link" (click)="goToCourseInstance(e.examDTO.enrollmentDTO.courseInstanceDTO)">
+                            {{ e.examDTO.enrollmentDTO.courseInstanceDTO.courseSpecificationDTO.title }}
+                        </button>
+                    </td>
+                    <td class="text-center">{{ dateToString(e.date) | date:'medium'}}</td>
+                    <td class="text-center">{{ e.location }}</td>
+                    <td class="text-center">{{ e.points }}</td>
+                    <td *ngIf="role === 'ROLE_STUDENT'" class="text-center">{{ e.wonPoints }}</td>
+                    <td *ngIf="role === 'ROLE_STUDENT' && isChecked(e.id)==='cr' && isPossibleUnRegister(e.date)" class="text-center"><input type="checkbox" (change)="checkValue(e)"></td>
+                    <td *ngIf="role === 'ROLE_STUDENT' && isChecked(e.id)==='re' && isPossibleUnRegister(e.date)" class="text-center"><input type="checkbox" checked (change)="checkValue(e)"></td>
+                    <td *ngIf="role === 'ROLE_STUDENT' && isChecked(e.id)==='cr' && !isPossibleUnRegister(e.date)" class="text-center"><input disabled="disabled" type="checkbox" (change)="checkValue(e)"></td>
+                    <td *ngIf="role === 'ROLE_STUDENT' && isChecked(e.id)==='re' && !isPossibleUnRegister(e.date)" class="text-center"><input disabled="disabled" type="checkbox" checked (change)="checkValue(e)"></td>
+                    <td *ngIf="role === 'ROLE_STUDENT' && isChecked(e.id)!=='re' && isChecked(e.id)!=='cr'" class="text-center">{{ e.statusDTO.name }}</td>
+                    <td class="text-center">{{ e.examPartTypeDTO.name }}</td>
+                    <td>
+                        <button *ngIf="role === 'ROLE_ADMINISTRATOR' || role === 'ROLE_TEACHER'" type="button" class="ml-1 btn-primary rounded align-top" (click)="goToExamPart(e)">🖉</button>
+                        <button *ngIf="role === 'ROLE_ADMINISTRATOR' || role === 'ROLE_TEACHER'" type="button" class="ml-1 btn-danger rounded align-top" (click)="deleteExamPart(e)">X</button>
+                        <button *ngIf="role === 'ROLE_ADMINISTRATOR' || role === 'ROLE_TEACHER'" type="button" class="btn rounded btn-light btn-sm ml-1" (click)="goToExamPartDetail(e)"><img style="background-color: white;" src="../../../assets/img/icon_detail.png" alt=""></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav class="d-inline-block text-center w-100">
+            <ul class="pagination d-inline-block">
+              <li class="page-item d-inline-block">
+                <button class="page-link" (click)="reduceNumberPage()">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </button>
+              </li>
+              <div class="d-inline-block" *ngFor="let i of numberPages;">
+                <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+                <li *ngIf="!(numberPage===(i-1))" class="page-item d-inline-block"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+              </div>
+              <li class="page-item d-inline-block">
+                <button class="page-link" (click)="increaseNumberPage()">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        <div *ngIf="role !== 'ROLE_STUDENT'" class="ml-5 text-right">
+            <a class="btn btn-outline-primary mt-3 ml-5" routerLink="/add-exam-part" role="button">Add</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="main color_text">
+    <table class="table mx-auto w-75">
+        <thead class="color_text">
+            <tr>
+              <th colspan="4" class="text-center">
+                <h2>Courses</h2>
+              </th>
+            </tr>
+            <tr>
+                <th class="text-center">Title</th>
+                <th class="text-center">Start date</th>
+                <th class="text-center">End date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="color_text">
+            <tr *ngFor="let ci of courseInstances; let i = index; let odd = odd;">
+                <td class="text-center"><button class="btn btn-link" (click)="goToCourseInstance(ci)">{{ci.courseSpecificationDTO.title}}</button></td>
+                <!-- <td class="text-center">{{ ci.courseSpecificationDTO.title }}</td> -->
+
+                <td class="text-center">{{ dateToString(ci.startDate) | date:'mediumDate'}}</td>
+                <td class="text-center">{{ dateToString(ci.endDate) | date:'mediumDate'}}</td>
+                <td><button type="button" class="btn rounded btn-light btn-sm ml-1" (click)="goToStudentDetail(ci)"><img style="background-color: white;" src="../../../assets/img/icon_detail.png" alt=""></button></td>
+              </tr>
+        </tbody>
+    </table>
+    <nav class="d-inline-block text-center w-100">
+        <ul class="pagination d-inline-block">
+          <li class="page-item d-inline-block">
+            <button class="page-link" (click)="reduceNumberPage()">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </button>
+          </li>
+          <div class="d-inline-block" *ngFor="let i of numberPages;">
+            <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+            <li *ngIf="!(numberPage===(i-1))" class="page-item d-inline-block"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+          </div>
+          <li class="page-item d-inline-block">
+            <button class="page-link" (click)="increaseNumberPage()">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+</div>

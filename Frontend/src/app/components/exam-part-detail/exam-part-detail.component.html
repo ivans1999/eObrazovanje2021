@@ -1,0 +1,93 @@
+<div class="table_color">
+    <div class="main color_text">
+        <div class="row">
+            <div class=" col-sm-6 text-left">
+                <h1 class="ml-5 title">Exam part detail</h1>
+            </div>
+            <div class=" col-sm-6">
+                <div class=" btn-group btn-group-toggle float-right"
+                    data-toggle="buttons">
+                    <label class=" btn btn-sm btn-danger btn-simple" >
+                        <input checked="checked" name="options" type="radio" />
+            
+                        <a class=" d-none d-sm-block d-md-block d-lg-block d-xl-block font-weight-bold" (click)="goBack()">
+                            Go back
+                        </a>
+                        <span class=" d-block d-sm-none">
+                          <i class=" tim-icons icon-single-02"> </i>
+                        </span>
+                      </label>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-auto w-75">
+            <div class="ml-5 col">
+                <b>Date:</b> <input type="datetime-local" readonly class="form-control ml-2" [(ngModel)]="dateString">
+            </div>
+            <div class="w-10 ml-5 col">
+                <b>Location:</b> <input type="text" readonly class="form-control ml-2 text-center" [(ngModel)]="examPart.location">
+            </div>
+            <div class="w-10 ml-5 col">
+                <b>Points:</b> <input type="text" readonly class="form-control ml-2 col-6 text-center" [(ngModel)]="examPart.points">
+            </div>
+            <div class="w-10 ml-5 col">
+                <b>Type:</b> <input type="text" readonly class="form-control text-center" [(ngModel)]="examPart.examPartTypeDTO.name">
+            </div>
+        </div>
+        <table class="table mx-auto w-75 mt-5 color_text">
+            <thead class="color_text">
+                <tr>
+                    <th colspan="4">
+                        <h3 class="ml-5 text-center">Students</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="text-center">Card number</th>
+                    <th class="text-center">Student</th>
+                    <th class="text-center">Won points</th>
+                    <th class="text-center">Status</th>
+                </tr>
+            </thead>
+            <tbody class="color_text">
+                <tr *ngFor="let e of examParts">
+                    <td class="text-center">
+                        {{e.examDTO.enrollmentDTO.studentDTO.cardNumber}}
+                    </td>
+                    <td class="text-center">
+                        {{e.examDTO.enrollmentDTO.studentDTO.userDTO.lastName}}
+                        {{e.examDTO.enrollmentDTO.studentDTO.userDTO.firstName}}
+                    </td>
+                    <td class="text-center"><input (focusout)="change(e,$event)" type="text" class="form-control col-5 text-center d-inline-block" value="{{ e.wonPoints }}"></td>
+                    <td class="text-center">
+                        <select class="form-control text-center col-8 d-inline-block" [(ngModel)]="e.statusDTO.code" (focusout)="change(e,$event)">
+                            <option class="black_text_color" *ngFor="let s of examPartStatuss" value="{{s.code}}">{{s.name}}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav class="d-inline-block text-center w-100">
+            <ul class="pagination d-inline-block">
+              <li class="page-item d-inline-block">
+                <button class="page-link" (click)="reduceNumberPage()">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </button>
+              </li>
+              <div class="d-inline-block" *ngFor="let i of numberPages;">
+                <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+                <li *ngIf="!(numberPage===(i-1))" class="page-item d-inline-block"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+              </div>
+              <li class="page-item d-inline-block">
+                <button class="page-link" (click)="increaseNumberPage()">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        <div class="ml-5 text-right">
+            <a class="btn btn-outline-primary mt-3 ml-5" (click)="submit()" role="button">Save</a>
+        </div>
+    </div>
+</div>

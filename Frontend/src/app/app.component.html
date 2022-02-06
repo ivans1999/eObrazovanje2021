@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <app-admin-sidebar *ngIf="role === 'ROLE_ADMINISTRATOR'"></app-admin-sidebar>
+  <app-student-navbar *ngIf="role === 'ROLE_STUDENT'"></app-student-navbar>
+  <app-teacher-navbar *ngIf="role === 'ROLE_TEACHER'"></app-teacher-navbar>
+  <!-- style="margin-top: 50px" -->
+  <div class="main-panel">
+    <app-navbar *ngIf="role === 'ROLE_ADMINISTRATOR' || role === 'ROLE_STUDENT' || role === 'ROLE_TEACHER'"></app-navbar>
+    <div [ngClass]="{'content':role!=undefined}">
+      <router-outlet (activate)="checkRole()"></router-outlet>
+    </div>
+  </div>
+</div>

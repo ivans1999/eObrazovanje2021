@@ -1,0 +1,19 @@
+<div class="main">
+    <h1 class="ml-5">Teachings</h1>
+    <table class="table mx-auto w-75 mt-5">
+        <thead>
+            <tr>
+                <th class="text-center">Teacher</th>
+                <th class="text-center">Teaching type</th>
+                <th class="text-center">Course Instance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of teachings; let i = index; let odd = odd;">
+                <td class="text-center"><button class="btn btn-link" (click)="goToViewUser(t.teacherDTO.userDTO)">{{t.teacherDTO.userDTO.firstName + " "+ t.teacherDTO.userDTO.lastName}}</button></td>
+                <td class="text-center">{{ t.teachingTypeDTO.name }}</td>
+                <td class="text-center"><button class="btn btn-link" (click)="goToViewUser(t.teacherDTO.userDTO)">{{t.courseInstanceDTO.courseSpecificationDTO.title}}</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,42 @@
+<div class=" col-md-8 color_text">
+    <div class=" table_color">
+        <h1 class="ml-5 title">Exam part</h1>
+        <form class="ml-5">
+            <div class=" row ml-2">
+                <div class="col-md-4 px-md-1">
+                    <div class=" form-group">
+                        <b>Date:</b>
+                        <input *ngIf="this.mode === 'ADD'" type="datetime-local" class="form-control" [(ngModel)]="examPart.date" [ngModelOptions]="{standalone: true}">
+                        <input *ngIf="this.mode === 'EDIT'" type="datetime-local" class="form-control" [(ngModel)]="dateString" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-md-4 px-md-1">
+                    <div class=" form-group">
+                        <b>Location:</b>
+                        <input type="text" class="form-control" [(ngModel)]="examPart.location" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row ml-2">
+                <div class="col-md-4 px-md-1">
+                    <div class=" form-group">
+                        <b>Points:</b>
+                        <input type="text" class="form-control" [(ngModel)]="examPart.points" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-md-4 px-md-1">
+                    <div class="form-group">
+                        <b>Type:</b>
+                        <select class="form-control" [(ngModel)]="typeCode" [ngModelOptions]="{standalone: true}">
+                            <option class="black_text_color" *ngFor="let type of examPartTypes" value="{{type.code}}">{{type.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="text-right">
+                <button type="button" class=" btn btn-fill btn-danger" (click)="save()">✓</button>
+                <button type="button" class=" btn btn-fill btn-danger ml-1" (click)="goBack()">X</button>
+            </div>
+        </form>
+    </div>
+</div>

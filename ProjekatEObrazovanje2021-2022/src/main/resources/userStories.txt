@@ -1,0 +1,33 @@
+As a [persona], I [want to], [so that].
+Student:
+	Enrollment
+	----------
+	As a Student, I want to see the list of passed exams, so that I know what exams are remaining.+
+	As a Student, I want to register for the exams, so that I passed exam.
+	As a Student, I want to see the list of my enrollment, so that I know which of the enrollments I must to listening.
+	As a Student, I want to see the list ExamPart, so that I know how many parts do I have left.
+	As a Student, I want to unregistered for the exams, so that I don't ready for taking an exam.
+	
+	Payment
+	-------
+	As a Student, I want to registered on my account, so that I can make payment.
+	As a Student, I want to see my amount of account, so that I can exams registered.
+	As a Student, I want to see the list of success payments, so that I know where go my money.
+	
+	Document
+	--------
+	As a Student, I want to see the list of my documents, so that I know which of the documents I have and missing.
+	As a Student, I want to make new document, when I miss a document.
+
+Teacher:
+	Teaching
+	--------
+	As a Teacher, I want to see the list of teaching, so that I know when I have teaching.
+	As a Teacher, I want to see exam parts of someone student, so that I can give a grade.
+	Napomena: Moramo pitati profesora vezano za administraciju predmeta.
+	
+User:
+	As User, I want change password, for protected my date.
+	
+Administrator:
+	As a administrator, I can administration all parts of application, so that application successfuly working.

@@ -1,0 +1,34 @@
+-----------------------------------------------
+pokretanje servera sa odredjenom konfiguracijom
+ng serve --proxy-config proxy.config.json
+-----------------------------------------
+
+-------------------------
+obicno pokretanje servera
+ng serve
+-------------------------
+
+----------------------------
+kreiranje novog projekta
+npm install -g @angular/cli
+ng new my-first-project
+cd my-first-project
+----------------------------
+
+-------------------------
+kreiranje nove komponente
+ng g component components/component_name
+----------------------------------------
+
+------------------------------------
+kreiranje novog servisa
+ng generate service <name> [options]
+------------------------------------
+
+------------------------------------
+kreiranje nove klase
+ng generate class <name> [options]
+------------------------------------
+
+dodatne informacije na linku:
+https://angular.io/cli/generate#class

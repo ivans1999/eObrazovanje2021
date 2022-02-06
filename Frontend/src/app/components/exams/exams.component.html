@@ -1,0 +1,47 @@
+
+    <div class="table_color">
+        <div class="main">
+            <h1 *ngIf="exams.length > 0" class="ml-5 title">Exams</h1>
+            <h3 *ngIf="exams.length == 0" class="ml-5">You have no exams!</h3>
+            <table class="table mx-auto w-75" *ngIf="exams.length > 0">
+                <thead>
+                    <tr>
+                        <th class="text-center">Title</th>
+                        <th class="text-center">Gradle</th>
+                        <th class="text-center">Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of exams; let i = index; let odd = odd;">
+                        <td class="text-center"><button class="btn btn-link" (click)="gotToViewExam(e)">{{ e.enrollmentDTO.courseInstanceDTO.courseSpecificationDTO.title }}</button></td>
+                        <td class="text-center">{{ e.gradle }}</td>
+                        <td class="text-center">{{ e.points }}</td>
+                    </tr>
+                </tbody>
+                
+            </table>
+            <nav class="d-inline-block text-center w-100">
+                <ul class="pagination d-inline-block">
+                  <li class="page-item d-inline-block">
+                    <button class="page-link" (click)="reduceNumberPage()">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </button>
+                  </li>
+                  <div class="d-inline-block" *ngFor="let i of numberPages;">
+                    <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+                    <li *ngIf="!(numberPage===(i-1))" class="page-item d-inline-block"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+                  </div>
+                  <li class="page-item d-inline-block">
+                    <button class="page-link" (click)="increaseNumberPage()">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </button>
+                  </li>
+                </ul>
+              </nav> 
+            <!-- <div *ngIf="role !== 'ROLE_STUDENT'" class="ml-5" style="float: right; margin-right: 15%;">
+                <a class="btn btn-outline-primary mt-3 ml-5" routerLink="/add-exam" role="button">Add</a>
+            </div> -->
+        </div>
+    </div>
