@@ -7,7 +7,7 @@ import { StudentService } from "../student/student.service";
 
 @Injectable()
 export class ExamPartService{
-    private examDetailUrl = 'api/exam-part';
+    private examDetailUrl = 'http://localhost:8080/api/exam-part';
     private courseId:number = 0;
 
     constructor(private http: HttpClient,private auths:AuthenticationService,private studentS:StudentService) { }

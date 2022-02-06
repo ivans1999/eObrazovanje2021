@@ -6,7 +6,7 @@ import { Teaching } from "src/app/model/teaching";
 
 @Injectable()
 export class TeachingsService {
-    private teachingsUrl = "api/teaching"
+    private teachingsUrl = "http://localhost:8080/api/teaching"
 
     constructor(private http: HttpClient){ }
 

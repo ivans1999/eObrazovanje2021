@@ -5,8 +5,8 @@ import { Account } from "src/app/model/accounts";
 
 @Injectable()
 export class AccountService {
-    private accountsUrl = 'api/account'
-    private paymentUrl = 'api/payment'
+    private accountsUrl = 'http://localhost:8080/api/account'
+    private paymentUrl = 'http://localhost:8080/api/payment'
 
     constructor(private http: HttpClient) { }
 

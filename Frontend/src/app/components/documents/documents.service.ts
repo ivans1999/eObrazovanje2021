@@ -10,7 +10,7 @@ import { StudentService } from "../student/student.service";
 
 @Injectable()
 export class DocumentsService {
-    private documentUrl = 'api/document';
+    private documentUrl = 'http://localhost:8080/api/document';
 
     constructor(private http: HttpClient, private auths: AuthenticationService,private studentS:StudentService){
         
