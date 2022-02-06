@@ -6,7 +6,7 @@ import { JWT } from "src/app/model/jwt";
 
 @Injectable()
 export class ExamsService{
-    private examsUrl = 'http://localhost:8080/api/exam';
+    private examsUrl = '/api/exam';
 
     constructor(private http: HttpClient) { }
 

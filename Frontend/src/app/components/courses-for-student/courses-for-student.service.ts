@@ -6,7 +6,7 @@ import { AuthenticationService } from "src/app/services/authentication.service";
 
 @Injectable()
 export class CourseInstanceForStudentService {
-    private courseInstancesForStudent = 'http://localhost:8080/api/course-instance';
+    private courseInstancesForStudent = 'api/course-instance';
 
     
     constructor(private http: HttpClient,private authS:AuthenticationService) { }

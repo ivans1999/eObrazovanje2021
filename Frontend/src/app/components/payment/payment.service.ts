@@ -7,8 +7,8 @@ import { StudentService } from "../student/student.service";
 
 @Injectable()
 export class PaymentService {
-    private paymentsUrl = 'http://localhost:8080/api/payment';
-    private accountUrl = 'http://localhost:8080/api/account';
+    private paymentsUrl = 'api/payment';
+    private accountUrl = 'api/account';
 
     constructor(private http: HttpClient,private authS:AuthenticationService,private studentS:StudentService) { }
 

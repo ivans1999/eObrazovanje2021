@@ -7,7 +7,7 @@ import { User } from "src/app/model/user";
 @Injectable()
 export class HomeService {
 
-    private usersUrl = 'http://localhost:8080/api/users';
+    private usersUrl = 'api/users';
 
     constructor(private http: HttpClient) { }
 

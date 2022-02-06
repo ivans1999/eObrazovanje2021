@@ -8,7 +8,7 @@ import { ExamPartType } from '../model/examPartType';
 })
 export class ExamPartTypeService {
 
-  private examPartType = 'http://localhost:8080/api/exam-part-type';
+  private examPartType = 'api/exam-part-type';
 
   constructor(private http: HttpClient) { }
 

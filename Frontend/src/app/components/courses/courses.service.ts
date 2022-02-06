@@ -11,11 +11,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class CoursesService {
 
-  private coursesInstanceUrl = 'http://localhost:8080/api/course-instance';
+  private coursesInstanceUrl = 'api/course-instance';
 
-  private coursesSpecificationUrl = 'http://localhost:8080/api/course-specfication';
+  private coursesSpecificationUrl = 'api/course-specfication';
 
-  private enrolmentUrl = 'http://localhost:8080/api/enrollment';
+  private enrolmentUrl = 'api/enrollment';
 
   constructor(private http: HttpClient,private authS:AuthenticationService) { }
 
