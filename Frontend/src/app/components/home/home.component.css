@@ -1,0 +1,14 @@
+#bg{
+	background-image: url('/assets/img/Background.png');
+	/* Full height and width */
+    height: 100%; 
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+.form-control {
+	border-color:#00f7ff;
+}

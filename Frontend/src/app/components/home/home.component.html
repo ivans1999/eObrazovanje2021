@@ -1,44 +1,5 @@
-<!-- <div class="form-group text-center">
-  <div style="display: inline;">
-      <img src="../../../assets/img/Sample_User_Icon.png" class="w-15 h-15 ml-5">
-  </div>
-  <div class="">
-      <b>First name:</b>
-      <input *ngIf="editInstance!=true" type="text" class="form-control col-2 d-inline ml-2" readonly [(ngModel)]="user.firstName">
-      <input *ngIf="editInstance"  type="text"  class='form-control col-2 d-inline ml-2' [(ngModel)]="changePass.firstName" className='form-control form-control-sm col-10'/>
-      
-  </div>
-  <div class="mt-2 ml-50">
-      <b>Last name:</b>
-      <input *ngIf="editInstance!=true" type="text" class="form-control col-2 d-inline ml-2" readonly [(ngModel)]="user.lastName">
-      <input *ngIf="editInstance" type="text" class='form-control col-2 d-inline ml-2' [(ngModel)]="changePass.lastName" className='form-control form-control-sm col-10'/>
-  </div>
-  <div class="mt-2 ml-50">
-      <b>Username:</b>
-      <input type="text" class="form-control col-2 d-inline ml-2" readonly [(ngModel)]="user.userName">
-  </div>
-  <div *ngIf="editInstance" class="mt-2 ml-50">
-      <b>Old password:</b>
-      <input  type="password" class='form-control col-2 d-inline ml-2' [(ngModel)]="changePass.oldPass" className='form-control form-control-sm col-10'/>
-  </div>
-  <div *ngIf="editInstance" class="mt-2 ml-50">
-      <b>New password:</b>
-      <input type="password" class='form-control col-2 d-inline ml-2' [(ngModel)]="changePass.newPass" className='form-control form-control-sm col-10'/>
-  </div>
-  <div *ngIf="editInstance" class="mt-2 ml-50">
-      <b>Repeate new password:</b>
-      <input type="password"  class='form-control col-2 d-inline ml-2' [(ngModel)]="repeatPass" className='form-control form-control-sm col-10'/>
-  </div>
-  <div class="ml-5">
-      <button type="button" class="btn btn-outline-primary mt-3 ml-5" *ngIf="!editInstance" (click)="edit()">Change information</button>
-      <button type="button" class="btn btn-outline-primary mt-3 ml-5" *ngIf="editInstance" (click)="submit()">✓</button>
-      <button type="button" class="btn btn-outline-primary mt-3 ml-2" *ngIf="editInstance" (click)="cancel()">X</button>
-  </div>
-</div> -->
-
-<!-- -------------------------------------- -->
-
-<div class=" col-md-8 color_text">
+<div id="bg">
+<div class=" col-md-8 color_text" style="margin-top:15px;">
   <div class=" table_color">
     <!-- <div class=" card-header" ></div> -->
     <div class=" card-body" >
@@ -145,25 +106,8 @@
     <div class=" card-footer text-right" style="background-color: rgba(39,41,61,255);">
       <button type="button" class=" btn btn-fill btn-danger" *ngIf="!editInstance" (click)="edit()">Change information</button>
       <button type="button" class=" btn btn-fill btn-danger" *ngIf="editInstance" (click)="submit()">✓</button>
-      <button type="button" class=" btn btn-fill btn-danger" *ngIf="editInstance" (click)="cancel()">X</button>
+      <button type="button" class=" btn btn-fill btn-danger" *ngIf="editInstance" (click)="cancel()" style="margin-left:10px;">X</button>
     </div>
   </div>
 </div>
-    <!-- <div class=" col-md-4">
-      <div class=" card card-user">
-        <div class=" card-body">
-          <p class=" card-text"></p>
-          <div class=" author">
-            <div class=" block block-one"></div>
-            <div class=" block block-two"></div>
-            <div class=" block block-three"></div>
-            <div class=" block block-four"></div>
-            <a href="javascript:void(0)">
-              <img alt="..." class="w-15 h-15 ml-5" src="../../../assets/img/Sample_User_Icon.png" />
-
-          <h5 class=" title">Svetozar Brboric</h5>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div> -->
+</div>

@@ -1,55 +1,5 @@
-<!-- <nav id="mainNavbar" class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a routerLink="/home" class="navbar-brand">HOME</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        (click)="collapsed = !this.collapsed"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        id="navbarSupportedContent"
-        [ngClass]="{ collapse: collapsed, 'navbar-collapse': true }"
-      >
-        <ul class="navbar-nav ml-auto">
-          <li routerLinkActive="active" class="nav-item">
-            <a routerLink="/users" class="nav-link"> Users </a>
-          </li>
-          <li routerLinkActive="active" class="nav-item">
-            <a routerLink="/students" class="nav-link"> Students </a>
-          </li>
-          <li routerLinkActive="active" class="nav-item">
-            <a routerLink="/teachers" class="nav-link"> Teachers </a>
-          </li>
-          <li routerLinkActive="active" class="nav-item dropdown">
-            <div class="dropdown">
-              <button class="dropbtn bg-dark nav-link"> Courses </button>
-              <div class="dropdown-content">
-                <a routerLink="/courses">Instances</a>
-                <a href="courses-specifications">Specifications</a>
-              </div>
-            </div>
-         </li>
-          <li routerLinkActive="active" class="nav-item">
-            <a routerLink="/bs" class="nav-link" (click)="logout()"> Logout </a>
-        </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
-  <div class="sidebar h_20">
-    <!-- <div class="logo">
-      <a routerLink="/home" class="simple-text logo-normal ml-2">
-        Home
-      </a>
-    </div> -->
-    <div class="sidebar-wrapper">
+<div class="sidebar h_20">
+    <div class="sidebar-wrapper" style="background-color:#03a9f4; border-radius:6px;">
       <ul class="nav">
         <li routerLinkActive="active" class="nav-item">
           <a routerLink="/courses" class="nav-link">Courses instances</a>
