@@ -1,4 +1,5 @@
-  <div class="table_color " [ngClass]="{'pt-0 pb-0 pl-0 pr-0':teacher.id!=0}">
+<div id="bg">
+  <div class="table_color " [ngClass]="{'pt-0 pb-0 pl-0 pr-0':teacher.id!=0}" style="margin:15px 15px 0 15px;">
     <h1 class="ml-5 title" *ngIf="teacher.id==0">Courses</h1>
     <table class="table mx-auto w-75 ">
         <thead>
@@ -48,4 +49,5 @@
     <div *ngIf="btnAdd" class="text-right">
         <a *ngIf = "role==='ROLE_ADMINISTRATOR'" class="btn btn-outline-primary mt-3 ml-5" routerLink="/add-course-instance" role="button">Add</a>
     </div>
+</div>
 </div>

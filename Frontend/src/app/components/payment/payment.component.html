@@ -1,4 +1,5 @@
-<div class="main color_text">
+<div id="bg">
+<div class="table_color" style="margin:15px 15px 0 15px;">
     <table class="table mx-auto w-75">
         <thead class="color_text">
             <tr>
@@ -51,4 +52,5 @@
         <button *ngIf="role==='ROLE_STUDENT'" routerLink="/add-payment" type="button" class="btn btn-outline-light mt-3 ml-5">Add</button>
         <button *ngIf="role==='ROLE_ADMINISTRATOR'" (click)="goToAddPayment()" type="button" class="btn btn-outline-light mt-3 ml-5">Add</button>
     </div>
+</div>
 </div>

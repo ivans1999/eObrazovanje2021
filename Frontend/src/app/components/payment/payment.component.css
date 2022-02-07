@@ -8,3 +8,14 @@
 	background-image: linear-gradient(to bottom left, #344675, #263148, #344675);
 	border-color: #344675;
 }
+
+#bg{
+	background-image: url('/assets/img/Background1.png');
+	/* Full height and width */
+    height: 87%; 
+    width: 81%;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}

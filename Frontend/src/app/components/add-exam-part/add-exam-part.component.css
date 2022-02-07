@@ -1,3 +1,14 @@
 .form-control {
 	border-color:#00f7ff;
 }
+
+#bg{
+	background-image: url('/assets/img/Add.jpg');
+	/* Full height and width */
+    height: 87%; 
+    width: 81%;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
