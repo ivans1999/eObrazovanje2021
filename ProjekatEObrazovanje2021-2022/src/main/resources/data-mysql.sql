@@ -54,7 +54,7 @@ INSERT INTO exams(id, points, gradle, enrollment_id) VALUES(3, 0, 0, 3);
 INSERT INTO exams(id, points, gradle, enrollment_id) VALUES(4, 0, 0, 4);
 
 INSERT INTO exam_part_types(id,name,code) VALUES (1,'Colloquium','colloq');
-INSERT INTO exam_part_types(id,name,code) VALUES (2,'Oral exam','oral');
+INSERT INTO exam_part_types(id,name,code) VALUES (2,'Verbal exam','verbal');
 
 INSERT INTO exam_part_status(id,name,code) VALUES (1,'Passed','pa');
 INSERT INTO exam_part_status(id,name,code) VALUES (2,'Created','cr');
