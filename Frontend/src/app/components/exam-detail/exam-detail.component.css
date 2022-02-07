@@ -13,3 +13,7 @@
     background-size: cover;
     position: absolute;
 }
+
+.form-control {
+	border-color:#00f7ff;
+}
