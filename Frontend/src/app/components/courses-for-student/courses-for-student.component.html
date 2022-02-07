@@ -15,9 +15,7 @@
         </thead>
         <tbody class="color_text">
             <tr *ngFor="let ci of courseInstances; let i = index; let odd = odd;">
-                <td class="text-center"><button class="btn btn-link" (click)="goToCourseInstance(ci)">{{ci.courseSpecificationDTO.title}}</button></td>
-                <!-- <td class="text-center">{{ ci.courseSpecificationDTO.title }}</td> -->
-
+                <td class="text-center"><button class="btn btn-link" (click)="goToCourseInstance(ci)" style="color:#00f7ff; text-decoration: none;">{{ci.courseSpecificationDTO.title}}</button></td>
                 <td class="text-center">{{ dateToString(ci.startDate) | date:'mediumDate'}}</td>
                 <td class="text-center">{{ dateToString(ci.endDate) | date:'mediumDate'}}</td>
                 <td><button type="button" class="btn rounded btn-light btn-sm ml-1" (click)="goToStudentDetail(ci)"><img style="background-color: white;" src="../../../assets/img/icon_detail.png" alt=""></button></td>
@@ -33,7 +31,7 @@
             </button>
           </li>
           <div class="d-inline-block" *ngFor="let i of numberPages;">
-            <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+            <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)" style="background-color:#00f7ff; border-color:#00f7ff;">{{i}}</button></li>
             <li *ngIf="!(numberPage===(i-1))" class="page-item d-inline-block"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
           </div>
           <li class="page-item d-inline-block">

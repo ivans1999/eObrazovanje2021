@@ -8,22 +8,22 @@
             class=" btn-group btn-group-toggle float-right"
             data-toggle="buttons"
           >
-            <label class=" btn btn-sm btn-danger btn-simple" (click)="gotToExamParts()">
+            <label class=" btn btn-sm btn-danger btn-simple" (click)="gotToExamParts()" style="border-color:#00f7ff;">
               <input checked="checked" name="options" type="radio" />
   
               <span
                 class=" d-none d-sm-block d-md-block d-lg-block d-xl-block"
-              >
+              style="color:#00f7ff;">
               Exam parts
               </span>
               <span class=" d-block d-sm-none">
                 <i class=" tim-icons icon-single-02"> </i>
               </span>
             </label>
-            <label class=" btn btn-sm btn-danger btn-simple" >
+            <label class=" btn btn-sm btn-danger btn-simple" style="border-color:#00f7ff;">
                 <input checked="checked" name="options" type="radio" />
     
-                <a class=" d-none d-sm-block d-md-block d-lg-block d-xl-block font-weight-bold" (click)="goBack()">
+                <a class=" d-none d-sm-block d-md-block d-lg-block d-xl-block font-weight-bold" (click)="goBack()" style="color:#00f7ff;">
                     Go back
                 </a>
                 <span class=" d-block d-sm-none">
@@ -39,9 +39,9 @@
                 <b>Course:</b>
                 <input *ngIf="editInstance!=true" class='form-control col-2 ml-2 mb-3 d-inline' readonly list="coursesSpecifications" [(ngModel)]="courseSpecificationCode"/>
                 <input *ngIf="editInstance" (keyup)="searchSpecification($event)" class='form-control col-2 ml-2 mb-3 d-inline' list="coursesSpecifications" [(ngModel)]="courseSpecificationCode"/>
-                <button type="button" class="ml-1 btn-primary rounded" *ngIf="!editInstance" (click)="edit()">🖉</button>
-                <button type="button" class="ml-1 btn-primary rounded" *ngIf="editInstance" (click)="submit()">✓</button>
-                <button type="button" class="ml-1 btn-primary rounded" *ngIf="editInstance" (click)="cancel()">X</button>
+                <button type="button" class="ml-1 rounded" *ngIf="!editInstance" (click)="edit()">🖉</button>
+                <button type="button" class="ml-1 rounded" *ngIf="editInstance" (click)="submit()">✓</button>
+                <button type="button" class="ml-1 rounded" *ngIf="editInstance" (click)="cancel()">X</button>
                 <datalist id='coursesSpecifications'>
                     <option *ngFor="let cs of coursesSpecifications" value="{{cs.code}}">{{cs.title}}</option>
                 </datalist>
@@ -61,9 +61,9 @@
             <b>Teacher: </b>
             <input *ngIf="editTeacher!=true" class='form-control col-2 ml-2 mb-3 d-inline' readonly list="teachers" [(ngModel)]="teacherUsername"/>
             <input *ngIf="editTeacher" (keyup)="searchTeacher($event)" class='form-control col-2 ml-2 mb-3 d-inline' list="teachers" [(ngModel)]="teacherUsername"/>
-            <button type="button" class="ml-1 btn-primary rounded" *ngIf="!editTeacher" (click)="teacherEdit()">🖉</button>
-            <button type="button" class="ml-1 btn-primary rounded" *ngIf="editTeacher" (click)="teacherSubmit()">✓</button>
-            <button type="button" class="ml-1 btn-primary rounded" *ngIf="editTeacher" (click)="teacherCancel()">X</button>
+            <button type="button" class="ml-1 rounded" *ngIf="!editTeacher" (click)="teacherEdit()">🖉</button>
+            <button type="button" class="ml-1 rounded" *ngIf="editTeacher" (click)="teacherSubmit()">✓</button>
+            <button type="button" class="ml-1 rounded" *ngIf="editTeacher" (click)="teacherCancel()">X</button>
             <datalist id='teachers'>
                 <option *ngFor="let t of teachers" value="{{t.userDTO.userName}}">{{t.userDTO.firstName}} {{t.userDTO.lastName}}</option>
             </datalist>
@@ -85,7 +85,7 @@
                 </thead>
                 <tbody class="color_text">
                     <tr *ngFor="let s of students">
-                        <td class="text-center"><button class="btn btn-link" (click)="goToStudentDetail(s)">{{s.cardNumber}}</button></td>
+                        <td class="text-center"><button class="btn btn-link" (click)="goToStudentDetail(s)" style="color:#00f7ff; text-decoration: none;">{{s.cardNumber}}</button></td>
                         <td class="text-center">{{s.userDTO.firstName}}</td>
                         <td class="text-center">{{s.userDTO.lastName}}</td>
                         <td class="text-center"><button type="button" class="btn btn-danger btn-sm" (click)="removeStudent(s)">X</button></td>
@@ -101,7 +101,7 @@
                     </button>
                     </li>
                     <div class="d-inline-block" *ngFor="let i of numberPages;">
-                    <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+                    <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)" style="background-color:#00f7ff; border-color:#00f7ff;">{{i}}</button></li>
                     <li *ngIf="!(numberPage===(i-1))" class="page-item d-inline-block"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
                     </div>
                     <li class="page-item d-inline-block">
@@ -117,7 +117,7 @@
                     <datalist id='otherStudents'>
                         <option *ngFor="let s of otherStudents" value="{{s.cardNumber}}">{{s.userDTO.firstName}} {{s.userDTO.lastName}}</option>
                     </datalist>
-                    <button type="button" class="ml-1 btn-primary rounded" (click)="addStudent()">Add student</button>
+                    <button type="button" class="btn btn-outline-light mt-3 ml-5" (click)="addStudent()">Add student</button>
             </div>
         </div>
     </div>

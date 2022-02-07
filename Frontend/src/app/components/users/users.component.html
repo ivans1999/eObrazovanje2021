@@ -13,7 +13,7 @@
             <tr *ngFor="let u of users; let i = index; let odd = odd;">
                 <td class="text-center">{{u.firstName}}</td>
                 <td class="text-center">{{u.lastName}}</td>
-                <td class="text-center"><button class="btn btn-link" (click)="goToViewUser(u)">{{u.userName}}</button></td>
+                <td class="text-center"><button class="btn btn-link" (click)="goToViewUser(u)" style="color:#00f7ff; text-decoration: none;">{{u.userName}}</button></td>
                 <td class="text-center"><button type="button" class="btn btn-danger btn-sm" (click)="deleteUser(u)">X</button></td> 
             </tr>
         </tbody>
@@ -27,7 +27,7 @@
             </button>
           </li>
           <div class="d-inline-block" *ngFor="let i of numberPages;">
-            <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+            <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)" style="background-color:#00f7ff; border-color:#00f7ff;">{{i}}</button></li>
             <li *ngIf="!(numberPage===(i-1))" class="page-item d-inline-block"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
           </div>
           <li class="page-item d-inline-block">

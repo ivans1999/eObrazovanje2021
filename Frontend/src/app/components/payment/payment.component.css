@@ -1,0 +1,10 @@
+.page-link {
+	border-color:#00f7ff;
+	color: #00f7ff;
+}
+
+.ml-1, .mt-1 {
+	color:white;
+	background-image: linear-gradient(to bottom left, #344675, #263148, #344675);
+	border-color: #344675;
+}

@@ -17,8 +17,8 @@ INSERT INTO user_role(user_id, role_id) VALUES(4, 1);
 INSERT INTO user_role(user_id, role_id) VALUES(2, 2);
 INSERT INTO user_role(user_id, role_id) VALUES(3, 3);
 
-INSERT INTO STUDENTS(id, card_number, user_id) VALUES(1, 'SF-21-2018', 1);
-INSERT INTO STUDENTS(id, card_number, user_id) VALUES(2, 'SF-27-2018', 4);
+INSERT INTO STUDENTS(id, card_number, user_id) VALUES(1, 'SF-54-2018', 1);
+INSERT INTO STUDENTS(id, card_number, user_id) VALUES(2, 'SF-19-2018', 4);
 
 INSERT INTO administrators(id, user_id) VALUES(1, 2);
 

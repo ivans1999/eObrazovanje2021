@@ -1,5 +1,4 @@
-
-    <div class="table_color">
+<div class="table_color">
         <div class="main">
             <h1 *ngIf="exams.length > 0" class="ml-5 title">Exams</h1>
             <h3 *ngIf="exams.length == 0" class="ml-5">You have no exams!</h3>
@@ -13,7 +12,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let e of exams; let i = index; let odd = odd;">
-                        <td class="text-center"><button class="btn btn-link" (click)="gotToViewExam(e)">{{ e.enrollmentDTO.courseInstanceDTO.courseSpecificationDTO.title }}</button></td>
+                        <td class="text-center"><button class="btn btn-link" (click)="gotToViewExam(e)" style="color:#00f7ff; text-decoration: none;">{{ e.enrollmentDTO.courseInstanceDTO.courseSpecificationDTO.title }}</button></td>
                         <td class="text-center">{{ e.gradle }}</td>
                         <td class="text-center">{{ e.points }}</td>
                     </tr>
@@ -29,7 +28,7 @@
                     </button>
                   </li>
                   <div class="d-inline-block" *ngFor="let i of numberPages;">
-                    <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+                    <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)" style="background-color:#00f7ff; border-color:#00f7ff;">{{i}}</button></li>
                     <li *ngIf="!(numberPage===(i-1))" class="page-item d-inline-block"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
                   </div>
                   <li class="page-item d-inline-block">
@@ -40,8 +39,5 @@
                   </li>
                 </ul>
               </nav> 
-            <!-- <div *ngIf="role !== 'ROLE_STUDENT'" class="ml-5" style="float: right; margin-right: 15%;">
-                <a class="btn btn-outline-primary mt-3 ml-5" routerLink="/add-exam" role="button">Add</a>
-            </div> -->
         </div>
     </div>

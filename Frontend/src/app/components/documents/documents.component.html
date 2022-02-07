@@ -14,7 +14,7 @@
           </thead>
           <tbody>
               <tr  *ngFor="let d of documents; let i = index; let odd = odd;">
-                  <td class="text-center"><button class="btn btn-link" (click)="downloadFile(d)">{{ d.title }}</button></td>
+                  <td class="text-center"><button class="btn btn-link" (click)="downloadFile(d)" style="color:#00f7ff; text-decoration: none;">{{ d.title }}</button></td>
                   <td class="text-center">{{ d.typeDocumentDTO.name }}</td>
                   <td class="text-center"><button type="button" class="btn btn-danger btn-sm" (click)="deleteDocument(d)">X</button></td> 
               </tr>
@@ -29,7 +29,7 @@
               </button>
             </li>
             <div class="d-inline-block" *ngFor="let i of numberPages;">
-              <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
+              <li *ngIf="numberPage===(i-1)" class="page-item d-inline-block active"><button class="page-link" (click)="setNumberPage(i)" style="background-color:#00f7ff; border-color:#00f7ff;">{{i}}</button></li>
               <li *ngIf="!(numberPage===(i-1))" class="page-item d-inline-block"><button class="page-link" (click)="setNumberPage(i)">{{i}}</button></li>
             </div>
             <li class="page-item d-inline-block">
